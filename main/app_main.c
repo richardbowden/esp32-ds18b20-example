@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+#define CONFIG_RMT_SUPPRESS_DEPRECATE_WARN 1
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_system.h"
@@ -36,7 +38,7 @@
 #define DS18B20_RESOLUTION   (DS18B20_RESOLUTION_12_BIT)
 #define SAMPLE_PERIOD        (1000)   // milliseconds
 
-_Noreturn void app_main()
+void app_main(void)
 {
     // Override global log level
     esp_log_level_set("*", ESP_LOG_INFO);
